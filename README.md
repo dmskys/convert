@@ -1,7 +1,7 @@
 # convert
 golang convert type utils | golang类型转换工具
 
-#init package
+# init package
 ```go
 go get github.com/dmskys/convert
 ```
