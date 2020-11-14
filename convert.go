@@ -37,7 +37,7 @@ func IntToStr(value interface{}) string {
 }
 
 //Decimal to binary | 十进制转二进制
-func IntToBin(value interface{}) string {
+func DecToBin(value interface{}) string {
 	switch value.(type) {
 	case int32:
 		return strconv.FormatInt(int64(value.(int32)), 2)
@@ -63,7 +63,7 @@ func IntToBin(value interface{}) string {
 }
 
 //Decimal to hexadecimal | 十进制转16进制
-func IntToHex(value interface{}) string {
+func DecToHex(value interface{}) string {
 	switch value.(type) {
 	case int32:
 		return strconv.FormatInt(int64(value.(int32)), 16)
@@ -89,7 +89,7 @@ func IntToHex(value interface{}) string {
 }
 
 //Decimal to octal | 十进制转8进制
-func IntToOct(value interface{}) string {
+func DecToOct(value interface{}) string {
 	switch value.(type) {
 	case int32:
 		return strconv.FormatInt(int64(value.(int32)), 8)
@@ -251,8 +251,8 @@ func StrToFloat64(s string) float64 {
 }
 
 //二进制转十进制
-func BinToInt(s string) int64 {
-	i, err := strconv.ParseInt(s, 2, 64)
+func BinToDec(s []byte) int64 {
+	i, err := strconv.ParseInt(string(s), 2, 64)
 	if err != nil {
 		return 0
 	}
@@ -260,7 +260,7 @@ func BinToInt(s string) int64 {
 }
 
 //十六进制转十进制
-func HexToInt(s string) int {
+func HexToDec(s string) int {
 	var i16 = 0
 	if i, err := strconv.ParseInt(s, 16, 64); err != nil {
 		i16 = 0
@@ -271,7 +271,7 @@ func HexToInt(s string) int {
 }
 
 //八进制转十进制
-func OctToInt(s string) int {
+func OctToDec(s string) int {
 	var i8 = 0
 	if i, err := strconv.ParseInt(s, 8, 64); err != nil {
 		i8 = 0
